@@ -53,7 +53,7 @@ store.on("error",()=>{
 
 const sessionOptions={
     store,
-    secret:process.env.SECRETcle,
+    secret:process.env.SECRET,
     resave:false,
     saveUninitialized:true,
     cookie:{
@@ -81,6 +81,7 @@ app.use((req,res,next)=>{
     res.locals.success=req.flash("success");
     res.locals.error=req.flash("error");
     res.locals.currUser=req.user;
+    console.log(currUser);
     next();
 })
 
