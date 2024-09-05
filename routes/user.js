@@ -17,4 +17,6 @@ router.route("/login").get(UserController.renderLogin).post(saveRedirectUrl,pass
 // Logout Route
 router.get("/logout",UserController.logout);
 
+router.get("*").get(UserController.falseurl).post(UserController.falseurl);
+
 module.exports=router;

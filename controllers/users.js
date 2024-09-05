@@ -8,6 +8,11 @@ module.exports.renderindexpage=(req,res)=>{
     }
 }
 
+module.exports.falseurl=(req,res)=>{
+    req.flash("error",e.message);
+    res.redirect("/listings");
+}
+
 //Render Sign up
 module.exports.renderSignup=(req,res)=>{
     res.render("users/signup.ejs");
